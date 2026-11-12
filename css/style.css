@@ -1,1 +1,664 @@
 
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f8fd;
+    color: #183451;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(10,50,100,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.logo h2 {
+    color: #064b91;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.logo p {
+    font-size: 11px;
+    color: #71839a;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #24415f;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0875e1;
+}
+
+.menu-toggle {
+    display: none;
+    background: #0756b5;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 8px 13px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 570px;
+    position: relative;
+
+    background-image:
+        url("../assets/images/gedung-sekolah.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 60px 7%;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(4, 31, 65, 0.70),
+        rgba(8, 74, 137, 0.45)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    margin: auto;
+    animation: fadeUp 1s ease;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(35px, 6vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.hero h1 span {
+    color: #a9d7ff;
+}
+
+.hero p {
+    color: #f0f7ff;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: white;
+    color: #0756b5;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.btn span {
+    margin-left: 8px;
+}
+
+.btn:hover {
+    background: #dceeff;
+    transform: translateY(-4px);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: -45px;
+    left: -5%;
+    width: 110%;
+    height: 75px;
+    background: #f5f8fd;
+    border-radius: 50% 50% 0 0;
+}
+
+
+/* =========================
+   SECTION UMUM
+========================= */
+
+.section {
+    padding: 75px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading > span {
+    color: #2582d5;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #064b91;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.section-heading p {
+    color: #8292a6;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TENTANG
+========================= */
+
+.about {
+    background: #f5f8fd;
+}
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(30,80,140,0.07);
+    border: 1px solid #e8f0fa;
+}
+
+.about-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #5e7188;
+    font-size: 15px;
+}
+
+
+/* =========================
+   PENGUMUMAN
+========================= */
+
+.announcements {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #d9ebff,
+            transparent 35%
+        ),
+        linear-gradient(135deg, #eaf3ff, #f8fbff);
+}
+
+.announcement-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.announcement-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.9);
+    padding: 25px 22px;
+    border-radius: 20px;
+    border: 1px solid #e1ebf8;
+    box-shadow: 0 8px 25px rgba(28,78,140,0.07);
+    transition: 0.3s;
+}
+
+.announcement-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(28,78,140,0.13);
+}
+
+.announcement-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.blue {
+    background: #dcefff;
+}
+
+.red {
+    background: #ffe5e3;
+}
+
+.green {
+    background: #dcf8e8;
+}
+
+.purple {
+    background: #eee4ff;
+}
+
+.category {
+    color: #3986cb;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.announcement-content h3 {
+    color: #173e68;
+    font-size: 17px;
+    margin: 5px 0 10px;
+}
+
+.announcement-content p {
+    color: #71839a;
+    font-size: 13px;
+}
+
+
+/* =========================
+   JADWAL
+========================= */
+
+.schedule {
+    background: #ffffff;
+}
+
+.table-box {
+    background: white;
+    padding: 8px;
+    border-radius: 17px;
+    box-shadow: 0 8px 28px rgba(20,70,130,0.08);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    min-width: 550px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e6edf7;
+    font-size: 14px;
+}
+
+th {
+    color: white;
+    background: #0756b5;
+}
+
+td {
+    color: #536b84;
+}
+
+tbody tr:nth-child(even) {
+    background: #f1f7ff;
+}
+
+
+/* =========================
+   KONTAK
+========================= */
+
+.contact {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            #dcecff,
+            transparent 35%
+        ),
+        linear-gradient(135deg, #eef5ff, #f8fbff);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 28px 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #173e68;
+    border-radius: 20px;
+    border: 1px solid #e5edf7;
+    box-shadow: 0 8px 25px rgba(28,78,140,0.07);
+    transition: 0.3s;
+    overflow-wrap: anywhere;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(28,78,140,0.14);
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    font-size: 28px;
+    background: #edf3fa;
+    color: #111;
+}
+
+.whatsapp-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.gmail-icon {
+    background: #ffe6e3;
+    color: #db4437;
+}
+
+.maps-icon {
+    background: #e0ecff;
+    color: #2563eb;
+}
+
+.contact-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #8292a6;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.contact-card span {
+    color: #0875e1;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: linear-gradient(135deg, #062c58, #0756a5);
+    color: white;
+    padding: 45px 15px;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.footer p {
+    color: #c9def5;
+    font-size: 13px;
+}
+
+.footer small {
+    color: #d9e8fa;
+    font-size: 12px;
+}
+
+.footer-line {
+    width: 65px;
+    height: 3px;
+    border-radius: 10px;
+    background: #8cc8ff;
+    margin: 20px auto;
+}
+
+
+/* =========================
+   ANIMASI
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .announcement-container,
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 12px 5%;
+    }
+
+    .logo img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .logo h2 {
+        font-size: 12px;
+    }
+
+    .logo p {
+        font-size: 9px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px 6%;
+        border-top: 1px solid #edf1f6;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .announcement-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 480px) {
+
+    .logo h2 {
+        font-size: 10px;
+    }
+
+    .logo p {
+        font-size: 8px;
+    }
+
+    .hero {
+        min-height: 410px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+    }
+
+    .about-box {
+        padding: 25px 18px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+}
